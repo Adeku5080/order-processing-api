@@ -1,0 +1,15 @@
+import * as Knex from 'knex';
+
+const tableName = '';
+
+export async function up(knex: Knex.Knex) {
+  return knex.schema.createTable(tableName, t => {
+      t.uuid('id').primary().unique().notNullable()
+    t.timestamps(true, true)
+
+  });
+}
+
+export async function down(knex: Knex.Knex) {
+  return knex.schema.dropTable(tableName);
+}
